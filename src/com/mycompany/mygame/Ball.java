@@ -6,11 +6,11 @@ import com.badlogic.gdx.graphics.*;
 import java.util.*;
 
 public class Ball {
-    int x;
-    int y;
-    int size;
-    int xSpeed;
-    int ySpeed;
+    float x;
+    float y;
+    float size;
+    float xSpeed;
+    float ySpeed;
 	
     public Ball(int x, int y, int size, int xSpeed, int ySpeed) {
         this.x = x;
@@ -31,5 +31,26 @@ public class Ball {
     }
     public void draw(ShapeRenderer shape) {
         shape.circle(x, y, size);
-	}	
+	}
+	private boolean collision(Paddle pad){
+	 	float ballLeft = this.x - this.size;
+		float ballRight = this.x + this.size;
+		float ballTop = this.y + this.size;
+		float ballBottom = this.y - this.size;
+		float paddleLeft = pad.x;
+		float paddleBottom = pad.y;
+		float paddleRight = pad.x + pad.width;
+		float paddleTop = pad.y+ pad.height;
+		
+	return ballLeft< paddleRight &&
+	   	   ballRight> paddleLeft &&
+		   ballTop > paddleBottom &&
+		   ballBottom < paddleTop;
+	}
+	public void checkCollision(Paddle pad){
+		if(collision(pad)){
+			ySpeed= -ySpeed;
+			y =pad.y + pad.height+size;
+		}
+	}
 }

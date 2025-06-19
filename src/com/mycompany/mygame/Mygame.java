@@ -24,6 +24,7 @@ public class Mygame extends ApplicationAdapter {
     @Override
     public void render () {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		ball.checkCollision(paddle);
 		ball.update();
 		paddle.update();
 		shape.begin(ShapeRenderer.ShapeType.Filled);
