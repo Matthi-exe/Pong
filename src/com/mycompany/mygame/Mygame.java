@@ -19,7 +19,7 @@ public class Mygame extends ApplicationAdapter {
 	
     @Override
     public void create () {
-	 
+	    music = Gdx.audio.newMusic(Gdx.files.internal("My pong game song (1).mp3"));
 		shape = new ShapeRenderer();
 		paddle = new Paddle(0f,100f,30f);
 		ball = new Ball(50,50,20,5,5);
@@ -28,7 +28,6 @@ public class Mygame extends ApplicationAdapter {
 	  for(int x=0;x<Gdx.graphics.getWidth();x+=blockWidth+10){
 		  for(int y = Gdx.graphics.getHeight()/2; y<Gdx.graphics.getHeight();y+=blockHeight+10){
 			  blocks.add(new Block(x,y,blockWidth,blockHeight));
-			  music.play();
 		  }
 	  }
     }
