@@ -8,7 +8,7 @@ public class Paddle
 	float width,height;
 	
 	public Paddle(float y,float width,float height){
-		this.x = Gdx.graphics.getWidth()/2;
+		this.x = Gdx.graphics.getWidth();
 		this.y = y;
 		this.width = width;
 		this.height = height;
@@ -19,6 +19,6 @@ public class Paddle
 	}
 	
 	public void draw(ShapeRenderer shape){
-		shape.rect(x,y,width,height);
+		shape.rect(this.x,y,width,height);
 	}
 }

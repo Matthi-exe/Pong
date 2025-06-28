@@ -22,10 +22,10 @@ public class Ball {
     public void update() {
         x += xSpeed;
         y += ySpeed;
-        if (x < 50 || x > Gdx.graphics.getWidth()-50) {
+        if (x<50 || x > Gdx.graphics.getWidth()-50) {
             xSpeed = -xSpeed;
         }
-        if (y < 50 || y > Gdx.graphics.getHeight()-50) {
+        if (y > Gdx.graphics.getHeight()-50) {
             ySpeed = -ySpeed;
         }
     }
