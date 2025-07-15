@@ -15,11 +15,9 @@ public class Mygame extends ApplicationAdapter {
 	Paddle paddle;
 	Ball ball;
 	ArrayList<Block>blocks = new ArrayList<>();
-	Music music;
 	
     @Override
     public void create () {
-	    music = Gdx.audio.newMusic(Gdx.files.internal("My pong game song (1).mp3"));
 		shape = new ShapeRenderer();
 		paddle = new Paddle(0f,100f,30f);
 		ball = new Ball(50,50,20,5,5);
